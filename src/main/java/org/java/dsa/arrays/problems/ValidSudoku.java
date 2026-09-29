@@ -55,10 +55,10 @@ public class ValidSudoku {
                     if(isRowPresent || isColPresent || isGridPresent) {
                         return false;
                     }
+                    rowSet[i].add(sudoku[i][j]);
+                    colSet[j].add(sudoku[i][j]);
+                    gridSet[gridNumber].add(sudoku[i][j]);
                 }
-                rowSet[i].add(sudoku[i][j]);
-                colSet[j].add(sudoku[i][j]);
-                gridSet[gridNumber].add(sudoku[i][j]);
             }
         }
         return true;

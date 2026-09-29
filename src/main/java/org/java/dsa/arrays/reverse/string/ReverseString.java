@@ -1,6 +1,7 @@
 package org.java.dsa.arrays.reverse.string;
 
 import java.time.Instant;
+import java.util.*;
 
 public class ReverseString {
 
@@ -12,6 +13,33 @@ public class ReverseString {
         System.out.println(Instant.now());
         System.out.println("Reverse of a String Mansi: " + reverseString("Reverse of a String Mansi"));
         System.out.println(Instant.now());
+
+        List<Integer> result = new ArrayList();
+        Set<Integer> set1 = new HashSet();
+        Map<CharSequence, Boolean> map = new HashMap();
+    }
+
+    public boolean isAnagram(String s, String t) {
+
+        if(t == null || s == null) {
+            return false;
+        }
+
+        if(t.length() !=  s.length()) {
+            return false;
+        }
+        Map<String, Boolean> map = new HashMap();
+        char[] sArray = s.toCharArray();
+        char[] tArray = t.toCharArray();
+
+        Arrays.sort(sArray);
+        Arrays.sort(tArray);
+
+        String s1 = new String(sArray);
+        String s2 = new String(sArray);
+
+        return Arrays.equals(sArray, tArray);
+
     }
 
     //O(N)
